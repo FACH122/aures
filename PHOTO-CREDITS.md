@@ -25,7 +25,7 @@ own atelier photos (same filename, no code change needed).
 | `cat-couscoussiers.jpg` | copy of `piece-11.jpg` |
 | `cat-deco.jpg` | copy of `piece-12.jpg` |
 | `hero.jpg` | `photo-1610701596061-2ecf227e85b2` via Unsplash |
-| `intro.jpg` | Hands shaping clay (`photo-1493106641515-6b5631de4bb9`) via Unsplash |
+| `intro.jpg` | Owner-provided photo: potter at the wheel, atelier shelves |
 | `heritage.jpg` | Ghoufi canyon, Aurès — Bernard Gagnon, [CC BY 4.0](https://commons.wikimedia.org/wiki/File:Canyon_de_Ghoufi_01.jpg) via Wikimedia Commons |
 | `gal-tour.jpg` | https://unsplash.com/photos/hands-shaping-clay-on-a-pottery-wheel-6XQqWYpD7tg |
 | `gal-argile.jpg` | `photo-1493106641515-6b5631de4bb9` via Unsplash |
