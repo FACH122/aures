@@ -11,7 +11,7 @@ function galleryHtml(photos, name) {
   return `
     <img class="main-img" id="main-img" src="${esc(src0)}" alt="${esc(name)}">
     ${list.length > 1 ? `<div class="thumbs">
-      ${list.map((s, i) => `<img src="${esc(s)}" alt="" data-i="${i}" loading="lazy" class="${i === 0 ? 'on' : ''}">`).join('')}
+      ${list.map((s, i) => `<img src="${esc(s)}" alt="${esc(name)}" data-i="${i}" loading="lazy" class="${i === 0 ? 'on' : ''}">`).join('')}
     </div>` : ''}`;
 }
 
@@ -124,6 +124,7 @@ async function renderPdp() {
         </div>`}
         <p class="pdp-note">${t('piece_note')}</p>
         <p class="co-hint">💵 ${t('order_cod_note')}</p>
+        <p class="co-hint">🚚 ${t('ship_247')}</p>
         <div class="pdp-actions">
           ${soldOut ? `<button class="btn line" disabled>${t('sold_out')}</button>` : `
           <button class="btn accent" id="add-btn">🛒 ${t('piece_add')}</button>
@@ -237,6 +238,34 @@ async function renderPdp() {
         ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
     } : undefined,
   });
+
+  /* sticky mobile add-to-cart (mobile only via CSS) */
+  let stickyBar = document.getElementById('pdp-sticky');
+  if (!stickyBar) {
+    stickyBar = document.createElement('div');
+    stickyBar.id = 'pdp-sticky';
+    stickyBar.className = 'pdp-sticky';
+    stickyBar.innerHTML = `
+      <img id="sticky-img" alt="">
+      <div class="sticky-info"><span class="sticky-name" id="sticky-name"></span><span class="sticky-price" id="sticky-price"></span></div>
+      <button class="btn accent" id="sticky-add">${t('piece_add')}</button>`;
+    document.body.appendChild(stickyBar);
+    stickyBar.querySelector('#sticky-add').addEventListener('click', () => {
+      const main = root.querySelector('#add-btn');
+      if (main) main.click();
+    });
+  }
+  stickyBar.querySelector('#sticky-img').src = productPhoto(p);
+  stickyBar.querySelector('#sticky-img').alt = name;
+  stickyBar.querySelector('#sticky-name').textContent = name;
+  stickyBar.querySelector('#sticky-price').textContent = Number(p.price) > 0 ? DB.fmtPrice(p.price) : '';
+  const stickyToggle = () => {
+    const anchor = root.querySelector('.pdp-actions');
+    const past = anchor ? anchor.getBoundingClientRect().top < 0 : window.scrollY > 600;
+    stickyBar.classList.toggle('show', past && !soldOut);
+  };
+  window.addEventListener('scroll', stickyToggle, { passive: true });
+  stickyToggle();
   applyI18n();
   watchReveals(root);
   renderCartCount();
@@ -275,7 +304,19 @@ function openInquiryModal(p) {
     </form>
   </div>`;
   document.body.appendChild(el);
-  el.addEventListener('click', e => { if (e.target === el) el.remove(); });
+  el.setAttribute('role', 'dialog');
+  el.setAttribute('aria-modal', 'true');
+  el.setAttribute('aria-label', t('req_title'));
+  const prevFocus = document.activeElement;
+  const closeModal = () => {
+    el.remove();
+    document.removeEventListener('keydown', escClose);
+    if (prevFocus && prevFocus.focus) prevFocus.focus();
+  };
+  const escClose = (e) => { if (e.key === 'Escape') closeModal(); };
+  document.addEventListener('keydown', escClose);
+  el.addEventListener('click', e => { if (e.target === el) closeModal(); });
+  setTimeout(() => { const f = el.querySelector('#iq-name'); if (f) f.focus(); }, 60);
 
   el.querySelector('#inq-form').addEventListener('submit', async ev => {
     ev.preventDefault();
@@ -289,7 +330,7 @@ function openInquiryModal(p) {
         message: el.querySelector('#iq-msg').value.trim(),
         productId: p.id,
       });
-      el.remove();
+      closeModal();
       toast(t('ct_sent'));
     } catch (err) {
       btn.disabled = false;

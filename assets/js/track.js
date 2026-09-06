@@ -77,7 +77,7 @@ function trackRender(o) {
     const nm = LANG === 'ar' ? (it.name_ar || it.name_fr) : LANG === 'en' ? (it.name_en || it.name_fr) : it.name_fr;
     const li = document.createElement('li');
     li.innerHTML = `
-      ${it.photo ? `<img src="${esc(it.photo)}" alt="" loading="lazy">` : ''}
+      ${it.photo ? `<img src="${esc(it.photo)}" alt="${esc(nm)}" loading="lazy">` : ''}
       <div><b>${esc(nm || '')}</b><span>${esc(it.color || it.size || '')}${(it.color || it.size) ? ' · ' : ''}× ${qty}</span></div>
       <span class="track-price">${esc(DB.fmtPrice(Number(it.price) * qty))}</span>`;
     ul.appendChild(li);

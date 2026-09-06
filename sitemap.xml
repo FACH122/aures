@@ -8,4 +8,18 @@
   <url><loc>https://aures.dzstor.shop/contact</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://aures.dzstor.shop/checkout</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://aures.dzstor.shop/track</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://aures.dzstor.shop/piece?id=1</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aures.dzstor.shop/piece?id=2</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aures.dzstor.shop/piece?id=3</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aures.dzstor.shop/piece?id=4</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aures.dzstor.shop/piece?id=5</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aures.dzstor.shop/piece?id=6</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aures.dzstor.shop/piece?id=7</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aures.dzstor.shop/piece?id=8</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aures.dzstor.shop/piece?id=9</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aures.dzstor.shop/piece?id=10</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aures.dzstor.shop/piece?id=11</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aures.dzstor.shop/piece?id=12</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aures.dzstor.shop/piece?id=13</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aures.dzstor.shop/piece?id=14</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

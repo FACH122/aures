@@ -19,8 +19,8 @@
   <header class="site-header" id="site-header"></header>
 
   <section class="container page-banner">
-    <span class="kicker" data-i18n="cod_only"></span>
-    <h1 data-i18n="cart_title"></h1>
+    <span class="kicker" data-i18n="cod_only">Paiement à la livraison uniquement</span>
+    <h1 data-i18n="cart_title">Panier & commande</h1>
   </section>
 
   <main class="container" style="padding-bottom:40px">
@@ -31,22 +31,22 @@
         <div class="co-card">
           <div class="fd-bar" id="freeDeliveryBar" hidden></div>
           <div class="co-totals">
-            <div><span data-i18n="subtotal"></span><span id="subtotalVal">—</span></div>
+            <div><span data-i18n="subtotal">Sous-total</span><span id="subtotalVal">—</span></div>
             <div id="promoRow" hidden><span id="promoLabel"></span><span id="promoVal">—</span></div>
-            <div><span data-i18n="delivery"></span><span id="deliveryVal">—</span></div>
-            <div class="grand"><span data-i18n="total"></span><span id="totalVal">—</span></div>
+            <div><span data-i18n="delivery">Livraison</span><span id="deliveryVal">—</span></div>
+            <div class="grand"><span data-i18n="total">Total</span><span id="totalVal">—</span></div>
           </div>
           <div class="promo-entry">
             <input id="promoInput" type="text" autocomplete="off" data-i18n-ph="promo_code">
-            <button class="btn line btn-sm" id="promoBtn" type="button" data-i18n="promo_apply"></button>
+            <button class="btn line btn-sm" id="promoBtn" type="button" data-i18n="promo_apply">Appliquer</button>
           </div>
-          <p class="co-error" id="promoError"></p>
+          <p class="co-error" id="promoError" role="alert"></p>
           <div id="orderFormWrap" style="margin-top:18px;border-top:1px solid var(--line);padding-top:18px"></div>
         </div>
       </div>
 
       <section class="co-faq" id="faq" style="margin-top:44px">
-        <h2 data-i18n="faq_title" style="margin-bottom:16px"></h2>
+        <h2 data-i18n="faq_title" style="margin-bottom:16px">Livraison, paiement & échanges</h2>
         <div id="faqList"></div>
       </section>
     </div>
@@ -54,13 +54,13 @@
     <div id="successView" style="display:none">
       <div class="co-success">
         <div class="co-check">✓</div>
-        <h2 data-i18n="order_success"></h2>
-        <p><span data-i18n="order_number"></span> : <b id="orderRef"></b></p>
-        <p><span data-i18n="total"></span> : <b id="finalTotal"></b></p>
-        <p style="color:var(--ink-soft)" data-i18n="order_success_sub"></p>
+        <h2 data-i18n="order_success">Commande confirmée !</h2>
+        <p><span data-i18n="order_number">N° de commande</span> : <b id="orderRef"></b></p>
+        <p><span data-i18n="total">Total</span> : <b id="finalTotal"></b></p>
+        <p style="color:var(--ink-soft)" data-i18n="order_success_sub">Merci ! Nous vous appellerons pour confirmer la livraison. Paiement en espèces à la réception.</p>
         <div style="margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-          <a class="btn line" href="/collection" data-i18n="continue_shopping"></a>
-          <a class="btn accent" id="trackLink" href="/track" hidden data-i18n="nav_track"></a>
+          <a class="btn line" href="/collection" data-i18n="continue_shopping">Continuer mes achats</a>
+          <a class="btn accent" id="trackLink" href="/track" hidden data-i18n="nav_track">Suivi</a>
         </div>
       </div>
     </div>
@@ -69,11 +69,11 @@
   <footer id="site-footer"></footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-  <script src="assets/js/config.js"></script>
+  <script src="assets/js/config.js?v=2"></script>
   <script src="assets/js/i18n.js"></script>
-  <script src="assets/js/db.js"></script>
-  <script src="assets/js/ui.js?v=2"></script>
-  <script src="assets/js/cart.js"></script>
-  <script src="assets/js/checkout.js"></script>
+  <script src="assets/js/db.js?v=2"></script>
+  <script src="assets/js/ui.js?v=3"></script>
+  <script src="assets/js/cart.js?v=2"></script>
+  <script src="assets/js/checkout.js?v=2"></script>
 </body>
 </html>

@@ -47,6 +47,9 @@ function renderGrid() {
 function lightbox(src, alt) {
   const el = document.createElement('div');
   el.className = 'lightbox';
+  el.setAttribute('role', 'dialog');
+  el.setAttribute('aria-modal', 'true');
+  el.setAttribute('aria-label', alt);
   el.innerHTML = `<img src="${esc(src)}" alt="${esc(alt)}"><button aria-label="close">×</button>`;
   document.body.appendChild(el);
   const close = () => el.remove();

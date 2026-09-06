@@ -20,16 +20,16 @@
 
   <section class="container page-banner">
     <span class="kicker">📦 Aurès Céramique</span>
-    <h1 data-i18n="track_title"></h1>
-    <p data-i18n="track_intro"></p>
+    <h1 data-i18n="track_title">Suivre ma commande</h1>
+    <p data-i18n="track_intro">Entrez votre numéro de commande et le téléphone utilisé lors de l’achat.</p>
   </section>
 
   <main class="container" style="padding-bottom:60px;max-width:720px">
     <div class="co-card">
-      <div class="field"><label data-i18n="track_id"></label><input id="tId" inputmode="numeric" placeholder="1001"></div>
-      <div class="field"><label data-i18n="phone"></label><input id="tPhone" inputmode="tel" placeholder="0555 12 34 56"></div>
-      <p class="co-error" id="tError"></p>
-      <button class="btn accent" id="tBtn" style="width:100%" data-i18n="track_btn"></button>
+      <div class="field"><label for="tId" data-i18n="track_id">N° de commande</label><input id="tId" inputmode="numeric" placeholder="1001"></div>
+      <div class="field"><label for="tPhone" data-i18n="phone">Téléphone</label><input id="tPhone" inputmode="tel" placeholder="0555 12 34 56"></div>
+      <p class="co-error" id="tError" role="alert"></p>
+      <button class="btn accent" id="tBtn" style="width:100%" data-i18n="track_btn">Rechercher</button>
     </div>
     <div class="co-card" id="tResult" hidden style="margin-top:20px"></div>
   </main>
@@ -37,11 +37,11 @@
   <footer id="site-footer"></footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-  <script src="assets/js/config.js"></script>
+  <script src="assets/js/config.js?v=2"></script>
   <script src="assets/js/i18n.js"></script>
-  <script src="assets/js/db.js"></script>
-  <script src="assets/js/ui.js?v=2"></script>
-  <script src="assets/js/cart.js"></script>
-  <script src="assets/js/track.js"></script>
+  <script src="assets/js/db.js?v=2"></script>
+  <script src="assets/js/ui.js?v=3"></script>
+  <script src="assets/js/cart.js?v=2"></script>
+  <script src="assets/js/track.js?v=2"></script>
 </body>
 </html>

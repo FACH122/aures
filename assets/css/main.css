@@ -598,3 +598,65 @@ footer#site-footer .logo { color: #f4ead9; font-size: 1.4rem; }
 .parcel-box { background: rgba(107,112,66,.09); border: 1px dashed var(--olive); border-radius: 12px; padding: 14px 18px; margin-top: 16px; }
 .parcel-box > div { display: flex; justify-content: space-between; font-size: .9rem; padding-block: 2px; }
 .parcel-box small { color: var(--ink-soft); font-size: .8rem; }
+
+/* ============================================================
+   ACCESSIBILITY PACK — visible focus, AA contrast, mobile hits.
+   Brand look unchanged: --clay stays for large/bold/graphics.
+   ============================================================ */
+:root { --clay-ink: #9c4a28; --wa: #2e7d44; --wa-deep: #256b39; }
+
+:focus-visible {
+  outline: 3px solid var(--clay);
+  outline-offset: 2px;
+}
+
+/* small text in clay failed AA (4.39) — ink variant passes (5.55) */
+.kicker { color: var(--clay-ink); }
+.kicker::before { background: var(--clay-ink); }
+.link-more, .card-more { color: var(--clay-ink); }
+.card-add { border-color: var(--clay-ink); color: var(--clay-ink); }
+.card-add:hover { background: var(--clay-ink); border-color: var(--clay-ink); }
+
+/* WhatsApp green failed AA with white text (3.44) — #2e7d44 passes (5.08) */
+.btn.wa { background: var(--wa); box-shadow: 0 8px 22px rgba(46,125,68,.3); }
+.btn.wa:hover { background: var(--wa-deep); }
+.wa-mini { color: var(--wa); }
+.wa-fab, #wa-fab { background: var(--wa); box-shadow: 0 10px 26px rgba(46,125,68,.45); }
+
+/* ---------- sticky mobile add-to-cart (piece page) ---------- */
+.pdp-sticky {
+  position: fixed; bottom: 0; inset-inline: 0; z-index: 80;
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(255,253,248,.97); backdrop-filter: blur(8px);
+  border-top: 1px solid var(--line); padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  transform: translateY(110%); transition: transform .3s ease;
+  box-shadow: 0 -8px 24px rgba(46,36,29,.1);
+}
+.pdp-sticky.show { transform: none; }
+.pdp-sticky img { width: 44px; height: 54px; object-fit: cover; border-radius: 8px; background: var(--sand); }
+.pdp-sticky .sticky-info { flex: 1; min-width: 0; }
+.pdp-sticky .sticky-name { display: block; font-family: var(--serif); font-size: .95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pdp-sticky .sticky-price { color: var(--clay-deep); font-weight: 500; font-size: .9rem; }
+.pdp-sticky .btn { padding: 12px 22px; }
+@media (min-width: 861px) { .pdp-sticky { display: none; } }
+
+/* ---------- small-screen fixes ---------- */
+@media (max-width: 480px) {
+  .header-inner { gap: 10px; }
+  .logo { font-size: 1.05rem; }
+  .wa-mini { display: none; }
+  .co-card { padding: 18px 16px; }
+  .co-line { grid-template-columns: 60px 1fr; }
+  .co-line img { width: 60px; height: 74px; }
+  .co-line-price { grid-column: 2; justify-self: start; }
+  .pdp-qty button { padding: 10px 16px; }
+  .co-qty button { width: 34px; height: 34px; }
+  .track-trail { font-size: .68rem; }
+}
+
+/* ---------- testimonials (seed — owner replaces with real customer words) ---------- */
+.avis-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.avis-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; box-shadow: var(--shadow-soft); }
+.avis-card blockquote { font-family: var(--serif); font-size: 1.08rem; line-height: 1.55; margin-bottom: 14px; }
+.avis-card blockquote::before { content: '“'; display: block; font-size: 2.2rem; line-height: 1; color: var(--clay); }
+.avis-card figcaption { color: var(--ink-soft); font-size: .86rem; letter-spacing: .04em; }

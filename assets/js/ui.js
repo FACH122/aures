@@ -177,6 +177,7 @@ function toast(msg) {
   if (!el) {
     el = document.createElement('div');
     el.id = 'toast';
+    el.setAttribute('role', 'status');
     document.body.appendChild(el);
   }
   el.textContent = msg;
@@ -217,8 +218,11 @@ function renderHeader(active) {
     </div>
   </div>`;
   const burger = el.querySelector('.nav-burger');
-  if (burger) burger.addEventListener('click', () =>
-    el.querySelector('.nav-links').classList.toggle('open'));
+  if (burger) burger.addEventListener('click', () => {
+    const nav = el.querySelector('.nav-links');
+    const open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(open));
+  });
   if (typeof renderCartCount === 'function') renderCartCount();
 }
 

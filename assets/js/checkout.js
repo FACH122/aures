@@ -123,7 +123,7 @@ function coRender() {
     const row = document.createElement('div');
     row.className = 'co-line';
     row.innerHTML = `
-      <img src="${esc(it.photo || '')}" alt="">
+      <img src="${esc(it.photo || '')}" alt="${esc(nm)}">
       <div class="co-line-info">
         <div class="co-line-name">${esc(nm)}</div>
         <div class="co-line-meta">${it.color ? esc(it.color) + ' · ' : ''}${DB.fmtPrice(unit)}</div>
@@ -177,8 +177,8 @@ function coBuildForm() {
     form.id = 'orderForm';
     form.innerHTML = `
       <h2 style="font-size:1.3rem;margin-bottom:14px">${t('deliv_info')}</h2>
-      <div class="field"><label>${t('name')}</label><input id="fName" autocomplete="name"></div>
-      <div class="field"><label>${t('phone')}</label><input id="fPhone" inputmode="tel" autocomplete="tel" placeholder="0555 12 34 56"></div>
+      <div class="field"><label for="fName">${t('name')}</label><input id="fName" autocomplete="name"></div>
+      <div class="field"><label for="fPhone">${t('phone')}</label><input id="fPhone" inputmode="tel" autocomplete="tel" placeholder="0555 12 34 56"></div>
       <div class="field"><label>${t('deliv_type')}</label>
         <div class="deliv-choice">
           <label class="deliv-opt"><input type="radio" name="deliv" value="home" checked>
@@ -187,11 +187,11 @@ function coBuildForm() {
             <span><b>${t('deliv_desk')}</b><small>${t('deliv_desk_hint')}</small></span></label>
         </div>
       </div>
-      <div class="field"><label id="fAddressLabel">${t('address')}</label><textarea id="fAddress" rows="2" style="min-height:64px"></textarea></div>
-      <div class="field"><label>${t('zone')}</label><select id="fZone"></select></div>
+      <div class="field"><label id="fAddressLabel" for="fAddress">${t('address')}</label><textarea id="fAddress" rows="2" style="min-height:64px"></textarea></div>
+      <div class="field"><label for="fZone">${t('zone')}</label><select id="fZone"></select></div>
       <p class="co-hint">📞 ${t('confirm_call')}</p>
       <p class="co-hint">💵 ${t('cod_only')}</p>
-      <div class="co-error" id="formError"></div>
+      <div class="co-error" id="formError" role="alert"></div>
       <button class="btn accent" id="placeOrderBtn" style="width:100%">${t('place_order')}</button>`;
     wrap.appendChild(form);
     form.querySelector('#placeOrderBtn').addEventListener('click', coPlaceOrder);

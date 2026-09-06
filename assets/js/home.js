@@ -38,7 +38,12 @@ async function loadHome() {
   /* hero + section artwork (config override → bundled demo art → generated) */
   const heroImg = document.getElementById('hero-img');
   heroImg.src = window.HERO_IMAGE || 'assets/img/demo/hero.jpg';
-  heroImg.alt = 'Céramique traditionnelle algérienne';
+  if (!window.HERO_IMAGE) {
+    heroImg.srcset = 'assets/img/demo/hero-800.jpg 800w, assets/img/demo/hero.jpg 1600w';
+    heroImg.sizes = '100vw';
+  }
+  heroImg.fetchPriority = 'high';
+  heroImg.alt = 'Céramique chaouie des Aurès';
   document.getElementById('intro-img').src = 'assets/img/demo/intro.jpg';
   document.getElementById('intro-img').alt = 'Atelier de poterie';
   document.getElementById('heritage-img').src = 'assets/img/demo/heritage.jpg';
