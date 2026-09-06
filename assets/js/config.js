@@ -17,7 +17,7 @@ const SUPABASE_CONFIG = {
 
 // Public site URL for share previews / canonical links.
 // Leave '' to auto-detect from the address bar.
-window.SITE_URL = '';
+window.SITE_URL = 'https://aures1.netlify.app';
 
 // Your WhatsApp number in international format WITHOUT '+' — digits only.
 // e.g. Algerian number 0555 12 34 56 → '213555123456'.
