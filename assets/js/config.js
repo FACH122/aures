@@ -11,8 +11,8 @@
    with sample pieces so you can preview the design.
    ============================================================ */
 const SUPABASE_CONFIG = {
-  url: '',
-  anonKey: '',
+  url: 'https://ptkzwftjtylaldkxppxx.supabase.co',
+  anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB0a3p3ZnRqdHlsYWxka3hwcHh4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg2ODMxMzgsImV4cCI6MjEwNDI1OTEzOH0.Am4VlYyCJZEgNXapPJtgMjuKBMcHfCytGYFZngTELQs',
 };
 
 // Public site URL for share previews / canonical links.
