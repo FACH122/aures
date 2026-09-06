@@ -100,7 +100,7 @@ function coRender() {
     CO_APPLIED = null;
     linesEl.innerHTML = `
       <p class="results-zero" style="padding:30px 0">${t('cart_empty')}</p>
-      <div class="text-center"><a class="btn line" href="collection.html">${t('continue_shopping')}</a></div>`;
+      <div class="text-center"><a class="btn line" href="/collection">${t('continue_shopping')}</a></div>`;
     ['subtotalVal', 'deliveryVal', 'totalVal'].forEach(id => {
       const el = document.getElementById(id);
       if (el) el.textContent = '—';
@@ -304,7 +304,7 @@ async function coPlaceOrder() {
     document.getElementById('orderRef').textContent = `#${res.id}`;
     document.getElementById('finalTotal').textContent = DB.fmtPrice(res.total);
     const track = document.getElementById('trackLink');
-    if (track) { track.href = `track.html?id=${encodeURIComponent(res.id)}`; track.hidden = false; }
+    if (track) { track.href = `/track?id=${encodeURIComponent(res.id)}`; track.hidden = false; }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } catch (e) {
     const code = String(e?.message || '');

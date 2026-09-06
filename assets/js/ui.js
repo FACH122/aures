@@ -103,18 +103,18 @@ function cardHtml(p) {
   const soldOut = (Number(p.stock ?? 1) <= 0);
   return `
   <div class="card reveal" data-card="${p.id}">
-    <a class="card-media" href="piece.html?id=${p.id}" aria-label="${esc(productName(p))}">
+    <a class="card-media" href="/piece?id=${p.id}" aria-label="${esc(productName(p))}">
       <img src="${esc(productPhoto(p))}" alt="${esc(productName(p))}" loading="lazy">
       ${stockBadge(p) ? `<span class="card-badge">${stockBadge(p)}</span>` : ''}
     </a>
     <div class="card-body">
       ${cardCat(p) ? `<span class="card-cat">${esc(cardCat(p))}</span>` : ''}
-      <h3><a href="piece.html?id=${p.id}">${esc(productName(p))}</a></h3>
+      <h3><a href="/piece?id=${p.id}">${esc(productName(p))}</a></h3>
       ${(p.colors && p.colors.length) ? `<div class="card-colors">${colorDots(p.colors)}</div>` : ''}
       ${p.dimensions ? `<span class="card-dims">${esc(p.dimensions)}</span>` : ''}
       ${priceHtml(p)}
       <div class="card-foot">
-        <a class="card-more" href="piece.html?id=${p.id}">${t('req_info')} →</a>
+        <a class="card-more" href="/piece?id=${p.id}">${t('req_info')} →</a>
         ${soldOut ? '' : `<button class="card-add" data-add="${p.id}" type="button">+ ${esc(t('add_to_cart'))}</button>`}
       </div>
     </div>
@@ -190,8 +190,8 @@ function renderHeader(active) {
   const el = document.getElementById('site-header');
   if (!el) return;
   const links = [
-    ['index.html', 'nav_home', 'home'],
-    ['collection.html', 'nav_collection', 'collection'],
+    ['/', 'nav_home', 'home'],
+    ['/collection', 'nav_collection', 'collection'],
     ['atelier.html', 'nav_atelier', 'atelier'],
     ['gallery.html', 'nav_gallery', 'gallery'],
     ['contact.html', 'nav_contact', 'contact'],
@@ -200,14 +200,14 @@ function renderHeader(active) {
   ${window.IS_DEMO ? `<div class="demo-bar" data-i18n="demo_banner">${t('demo_banner')}</div>` : ''}
   <div class="header-inner container">
     <button class="nav-burger" aria-label="menu">☰</button>
-    <a class="logo" href="index.html">AURÈS<span>CÉRAMIQUE</span></a>
+    <a class="logo" href="/">AURÈS<span>CÉRAMIQUE</span></a>
     <nav class="nav-links">
       ${links.map(([href, key, id]) =>
         `<a href="${href}" class="${active === id ? 'active' : ''}">${t(key)}</a>`).join('')}
     </nav>
     <div class="header-actions">
-      <a class="track-mini" href="track.html" title="${t('nav_track')}">📦</a>
-      <a class="cart-mini" href="checkout.html" aria-label="${t('nav_cart')}">
+      <a class="track-mini" href="/track" title="${t('nav_track')}">📦</a>
+      <a class="cart-mini" href="/checkout" aria-label="${t('nav_cart')}">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         <span class="cart-count" id="cartCount">0</span>
       </a>
@@ -229,25 +229,25 @@ function renderFooter() {
   el.innerHTML = `
   <div class="container footer-grid">
     <div>
-      <a class="logo" href="index.html">AURÈS<span>CÉRAMIQUE</span></a>
+      <a class="logo" href="/">AURÈS<span>CÉRAMIQUE</span></a>
       <p>${t('footer_tag')}</p>
       <div class="social-links" id="social-links"></div>
     </div>
     <div>
       <h4>${t('footer_links')}</h4>
-      <a href="collection.html" data-i18n="nav_collection">${t('nav_collection')}</a>
-      <a href="atelier.html" data-i18n="nav_atelier">${t('nav_atelier')}</a>
-      <a href="gallery.html" data-i18n="nav_gallery">${t('nav_gallery')}</a>
-      <a href="contact.html" data-i18n="nav_contact">${t('nav_contact')}</a>
-      <a href="checkout.html">${t('nav_cart')}</a>
-      <a href="track.html">${t('nav_track')}</a>
+      <a href="/collection" data-i18n="nav_collection">${t('nav_collection')}</a>
+      <a href="/atelier" data-i18n="nav_atelier">${t('nav_atelier')}</a>
+      <a href="/gallery" data-i18n="nav_gallery">${t('nav_gallery')}</a>
+      <a href="/contact" data-i18n="nav_contact">${t('nav_contact')}</a>
+      <a href="/checkout">${t('nav_cart')}</a>
+      <a href="/track">${t('nav_track')}</a>
     </div>
     <div>
       <h4>${t('footer_contact')}</h4>
       <a href="${telLink()}">${esc(st.store && st.store.phone || '')}</a>
       <a href="mailto:${esc(st.store && st.store.email || '')}">${esc(st.store && st.store.email || '')}</a>
       <span>${esc(st.address || '')}</span>
-      <a href="admin.html">${t('admin')}</a>
+      <a href="/admin">${t('admin')}</a>
     </div>
   </div>
   <div class="footer-bottom"><div class="container" data-i18n="rights">${t('rights')}</div></div>`;
@@ -269,7 +269,7 @@ function waLink(extraText) {
   return `https://wa.me/${n}${extraText ? '?text=' + encodeURIComponent(extraText) : ''}`;
 }
 function waProductUrl(p) {
-  const txt = `${t('piece_request')} — ${productName(p)} (${location.origin}/piece.html?id=${p.id})`;
+  const txt = `${t('piece_request')} — ${productName(p)} (${location.origin}/piece?id=${p.id})`;
   return waLink(txt);
 }
 function telLink() {

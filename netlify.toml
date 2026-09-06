@@ -2,7 +2,13 @@
 [build]
   publish = "."
 
-# Pretty URLs
+# Pretty URLs (silent rewrites keep the clean address in the bar)
+# Canonical home: /index.html permanently redirects to /
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
 [[redirects]]
   from = "/collection"
   to = "/collection.html"
@@ -41,6 +47,16 @@
 [[redirects]]
   from = "/suivi"
   to = "/track.html"
+  status = 200
+
+[[redirects]]
+  from = "/piece"
+  to = "/piece.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
   status = 200
 
 # Security headers (the anon key is public by design — the real security

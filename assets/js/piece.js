@@ -70,7 +70,7 @@ async function renderPdp() {
     root.innerHTML = `
       <div class="text-center">
         <h1>${t('piece_not_found')}</h1>
-        <a class="btn line mt-2" href="collection.html" data-i18n="piece_back"></a>
+        <a class="btn line mt-2" href="/collection" data-i18n="piece_back"></a>
       </div>`;
     applyI18n();
     return;
@@ -90,7 +90,7 @@ async function renderPdp() {
   const soldOut = (Number(p.stock ?? 1) <= 0);
 
   root.innerHTML = `
-    <a class="back-link" href="collection.html" data-i18n="piece_back">${t('piece_back')}</a>
+    <a class="back-link" href="/collection" data-i18n="piece_back">${t('piece_back')}</a>
     <div class="pdp">
       <div class="pdp-gallery">
         ${galleryHtml(photos, name)}
@@ -142,7 +142,7 @@ async function renderPdp() {
           <span class="kicker" data-i18n="feat_kicker"></span>
           <h2 data-i18n="piece_related"></h2>
         </div>
-        <a class="link-more" href="collection.html${p.category_id ? `?cat=${p.category_id}` : ''}" data-i18n="feat_all"></a>
+        <a class="link-more" href="/collection${p.category_id ? `?cat=${p.category_id}` : ''}" data-i18n="feat_all"></a>
       </div>
       <div class="grid-products" id="rel-grid"></div>
     </section>`;

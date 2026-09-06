@@ -49,7 +49,7 @@ async function loadHome() {
     window.CATS_CACHE = cats;
 
     document.getElementById('cat-grid').innerHTML = cats.map(c => `
-      <a class="cat-tile" href="collection.html?cat=${c.id}">
+      <a class="cat-tile" href="/collection?cat=${c.id}">
         <img src="${esc(c.image || placeholder(catLabel(c), (c.id * 35 + 18)))}" alt="${esc(catLabel(c))}" loading="lazy">
         <h3>${esc(catLabel(c))}</h3>
       </a>`).join('');

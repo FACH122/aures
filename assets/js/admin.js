@@ -15,7 +15,7 @@ function renderLogin() {
         <h2 style="margin-bottom:14px">Mode démo</h2>
         <p style="color:var(--ink-soft)">L'administration nécessite Supabase.<br>
         Renseignez <code>assets/js/config.js</code> puis exécutez <code>supabase/schema.sql</code>.</p>
-        <a class="btn line mt-2" href="index.html">← Retour au site</a>
+        <a class="btn line mt-2" href="/">← Retour au site</a>
       </div>
     </div>`;
     return;
@@ -30,7 +30,7 @@ function renderLogin() {
       <button class="btn accent" style="width:100%">Se connecter</button>
       <p id="lg-err" style="color:#b3402e;margin-top:10px;font-size:.88rem"></p>
     </form>
-    <a href="index.html" style="display:block;margin-top:16px;font-size:.88rem;color:var(--ink-soft)">← Retour au site</a>
+    <a href="/" style="display:block;margin-top:16px;font-size:.88rem;color:var(--ink-soft)">← Retour au site</a>
   </div>`;
   document.getElementById('login-form').addEventListener('submit', async e => {
     e.preventDefault();
@@ -57,7 +57,7 @@ function renderShell() {
         <h2 style="font-size:1.7rem">Aurès Céramique</h2>
       </div>
       <div class="row-actions-adm">
-        <a class="mini-btn" href="index.html" target="_blank">Voir le site ↗</a>
+        <a class="mini-btn" href="/" target="_blank">Voir le site ↗</a>
         <button class="mini-btn danger" id="logout-btn">Déconnexion</button>
       </div>
     </div>
