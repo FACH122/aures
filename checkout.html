@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panier & Commande — Aurès Céramique</title>
+  <meta name="description" content="Commandez nos pièces en céramique traditionnelle algérienne : paiement à la livraison partout en Algérie, emballage fragile soigné.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Aurès Céramique">
+  <meta property="og:title" content="Panier & Commande — Aurès Céramique">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#f8f3e9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23f8f3e9'/%3E%3Cpath d='M13 6h6v3c0 2.5 4.5 4 4.5 9.5S19.5 27 16 27s-7.5-3-7.5-8.5S13 11 13 9z' fill='%23b3572f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <section class="container page-banner">
+    <span class="kicker" data-i18n="cod_only"></span>
+    <h1 data-i18n="cart_title"></h1>
+  </section>
+
+  <main class="container" style="padding-bottom:40px">
+    <div id="cartView">
+      <p class="co-notice" id="cartNotice" hidden></p>
+      <div class="co-grid">
+        <div class="co-card" id="cartLines"></div>
+        <div class="co-card">
+          <div class="fd-bar" id="freeDeliveryBar" hidden></div>
+          <div class="co-totals">
+            <div><span data-i18n="subtotal"></span><span id="subtotalVal">—</span></div>
+            <div id="promoRow" hidden><span id="promoLabel"></span><span id="promoVal">—</span></div>
+            <div><span data-i18n="delivery"></span><span id="deliveryVal">—</span></div>
+            <div class="grand"><span data-i18n="total"></span><span id="totalVal">—</span></div>
+          </div>
+          <div class="promo-entry">
+            <input id="promoInput" type="text" autocomplete="off" data-i18n-ph="promo_code">
+            <button class="btn line btn-sm" id="promoBtn" type="button" data-i18n="promo_apply"></button>
+          </div>
+          <p class="co-error" id="promoError"></p>
+          <div id="orderFormWrap" style="margin-top:18px;border-top:1px solid var(--line);padding-top:18px"></div>
+        </div>
+      </div>
+
+      <section class="co-faq" id="faq" style="margin-top:44px">
+        <h2 data-i18n="faq_title" style="margin-bottom:16px"></h2>
+        <div id="faqList"></div>
+      </section>
+    </div>
+
+    <div id="successView" style="display:none">
+      <div class="co-success">
+        <div class="co-check">✓</div>
+        <h2 data-i18n="order_success"></h2>
+        <p><span data-i18n="order_number"></span> : <b id="orderRef"></b></p>
+        <p><span data-i18n="total"></span> : <b id="finalTotal"></b></p>
+        <p style="color:var(--ink-soft)" data-i18n="order_success_sub"></p>
+        <div style="margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a class="btn line" href="collection.html" data-i18n="continue_shopping"></a>
+          <a class="btn accent" id="trackLink" href="track.html" hidden data-i18n="nav_track"></a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/ui.js?v=2"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/checkout.js"></script>
+</body>
+</html>

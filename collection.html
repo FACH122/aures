@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Collection — Aurès Céramique</title>
+  <meta name="description" content="Parcourez notre collection de céramique chaouie des Aurès : assiettes, tasses, vases, tajines, qullas et pièces décoratives façonnés à la main.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Aurès Céramique">
+  <meta property="og:title" content="La Collection — Aurès Céramique">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#f8f3e9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23f8f3e9'/%3E%3Cpath d='M13 6h6v3c0 2.5 4.5 4 4.5 9.5S19.5 27 16 27s-7.5-3-7.5-8.5S13 11 13 9z' fill='%23b3572f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <section class="container page-banner">
+    <span class="kicker" data-i18n="feat_kicker"></span>
+    <h1 data-i18n="col_title"></h1>
+    <p data-i18n="col_sub"></p>
+  </section>
+
+  <section class="container" style="padding-bottom:40px">
+    <div class="filters-bar">
+      <div class="cat-filters gal-filters" id="cat-chips"></div>
+      <div class="search-box">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="q" data-i18n-ph="search_ph">
+      </div>
+      <select id="sort" class="sort-select" aria-label="Trier">
+        <option value="new">✦</option>
+        <option value="price_asc">DA ↑</option>
+        <option value="price_desc">DA ↓</option>
+        <option value="az">A–Z</option>
+      </select>
+    </div>
+    <div class="grid-products" id="grid"></div>
+    <p class="results-zero" id="zero" hidden></p>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="section cta-band">
+    <div class="container cta-inner">
+      <span class="kicker" style="justify-content:center" data-i18n="cta_kicker"></span>
+      <h2 data-i18n="cta_title"></h2>
+      <p data-i18n="cta_sub"></p>
+      <div class="cta-actions">
+        <a id="col-wa-btn" class="btn wa" target="_blank" rel="noopener"><span data-i18n="cta_whatsapp"></span></a>
+        <a id="col-tel-btn" class="btn line" data-i18n="cta_call"></a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/ui.js?v=2"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/collection.js"></script>
+</body>
+</html>

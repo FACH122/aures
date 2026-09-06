@@ -1,0 +1,438 @@
+/* AURÈS CÉRAMIQUE — trilingual i18n (FR / AR / EN).
+   UI strings live here; product/category data is trilingual per row in the
+   database and selected at render time (see productName()/catName()). */
+
+const I18N = {
+  /* ---------------- FRANÇAIS ---------------- */
+  fr: {
+    demo_banner: 'Mode démo — données d’exemple, connectez Supabase dans assets/js/config.js',
+    nav_home: 'Accueil', nav_collection: 'Collection', nav_atelier: 'Atelier',
+    nav_gallery: 'Galerie', nav_contact: 'Contact',
+
+    hero_kicker: 'Poterie chaouie — Aurès, Algérie',
+    hero_title: 'L’âme chaouie, façonnée dans la terre des Aurès',
+    hero_sub: 'Chaque pièce naît de l’argile des Aurès : modelée, peinte et émaillée à la main dans notre atelier, dans la pure tradition chaouie.',
+    hero_cta: 'Découvrir la collection',
+    hero_cta2: 'Notre savoir-faire',
+
+    intro_kicker: 'Bienvenue',
+    intro_title: 'Un atelier au pied des Aurès, une passion chaouie',
+    intro_body: 'Au pied des montagnes de l’Aurès, nous perpétuons l’art des potiers chaouis : qullas, tajines, assiettes et pièces décoratives, façonnés et décorés entièrement à la main.',
+    intro_body2: 'Semi-industriels par nos moyens, artisanaux par notre âme : chaque série garde la trace du geste humain qui l’a fait naître.',
+    intro_cta: 'Nous rendre visite',
+
+    feat_kicker: 'Sélection', feat_title: 'Pièces en vedette', feat_all: 'Voir tout →',
+    cat_kicker: 'Univers', cat_title: 'Nos catégories',
+
+    craft_kicker: 'Savoir-faire', craft_title: 'De l’argile brute à la pièce finie',
+    craft_sub: 'Sept étapes, aucune impasse — le même processus depuis toujours.',
+    step1_t: 'Préparation de l’argile', step1_d: 'L’argile est triée, humidifiée et pétrie longuement pour chasser l’air et obtenir une pâte homogène.',
+    step2_t: 'Façonnage', step2_d: 'Au tour ou au moule, la pièce prend forme entre les mains de l’artisan.',
+    step3_t: 'Séchage', step3_d: 'Les pièces reposent à l’ombre, plusieurs jours, pour évacuer toute humidité avant cuisson.',
+    step4_t: 'Décoration', step4_d: 'Motifs géométriques et floraux peints à main levée, au pinceau fin, dans la pure tradition algérienne.',
+    step5_t: 'Émaillage', step5_d: 'Un bain d’émail transparent protège la décoration et donne à la pièce son éclat profond.',
+    step6_t: 'Cuisson au four', step6_d: 'Plus de mille degrés pendant des heures : c’est là que la terre devient céramique, dure et éternelle.',
+    step7_t: 'Finition & contrôle', step7_d: 'Chaque pièce est inspectée à la main, poncée et contrôlée avant de quitter l’atelier.',
+
+    heritage_kicker: 'Héritage',
+    heritage_title: 'Les Chaouis, peuple de la terre et des montagnes',
+    heritage_body: 'Depuis des millénaires, les Chaouis des Aurès transforment l’argile en objets du quotidien : jarres à eau, plats à feu et pièces rituelles, ornés de symboles géométriques qui protègent et racontent.',
+    heritage_body2: 'En choisissant nos pièces, vous faites vivre des familles d’artisans et vous emportez chez vous un fragment authentique des Aurès.',
+    heritage_cta: 'Découvrir notre histoire',
+
+    gallery_kicker: 'Coulisses', gallery_title: 'La vie de l’atelier', gallery_all: 'Toute la galerie →', gallery_cta: 'Voir la galerie',
+
+    cta_kicker: 'Parlons-en', cta_title: 'Une question ? Une commande spéciale ?',
+    cta_sub: 'Écrivez-nous sur WhatsApp ou appelez-nous — nous répondons vite, en arabe, en français.',
+    cta_whatsapp: 'Écrire sur WhatsApp', cta_call: 'Nous appeler',
+
+    col_title: 'La Collection', col_sub: 'Des pièces uniques, façonnées et décorées à la main.',
+    search_ph: 'Rechercher une pièce…', all_cats: 'Tout', results_zero: 'Aucune pièce ne correspond à votre recherche.',
+    req_info: 'Demander infos',
+
+    piece_back: '← Retour à la collection',
+    piece_request: 'Demander des informations',
+    piece_whatsapp: 'Commander via WhatsApp',
+    piece_specs: 'Caractéristiques',
+    spec_dims: 'Dimensions', spec_material: 'Matière', spec_colors: 'Couleurs / décors',
+    spec_cat: 'Catégorie', material_default: 'Argile émaillée, peinture sans plomb',
+    piece_related: 'Vous aimerez aussi', piece_note: 'Pièce 100 % artisanale — de légères variations font partie du charme du fait main.',
+    piece_not_found: 'Pièce introuvable.',
+
+    gal_all: 'Tout', gal_workshop: 'Atelier', gal_artisans: 'Artisans',
+    gal_prod: 'Production', gal_details: 'Détails & motifs',
+
+    ct_title: 'Contactez-nous', ct_sub: 'Pour une commande, une visite de l’atelier ou simplement dire bonjour.',
+    ct_phone: 'Téléphone', ct_whatsapp: 'WhatsApp', ct_email: 'E-mail',
+    ct_address: 'Adresse', ct_hours: 'Horaires', ct_hours_val: 'Sam – Jeu : 8h30 – 17h30',
+    ct_form_title: 'Envoyez-nous un message',
+    ct_name: 'Votre nom', ct_phone_l: 'Votre téléphone', ct_email_l: 'E-mail (optionnel)',
+    ct_message: 'Votre message', ct_send: 'Envoyer le message',
+    ct_sent: 'Merci ! Votre message a bien été envoyé, nous vous répondrons très vite.',
+    ct_err_fields: 'Merci de renseigner votre nom et votre téléphone.',
+    ct_err_phone: 'Numéro de téléphone algérien invalide.',
+    ct_err_limit: 'Trop de messages envoyés — réessayez dans une heure.',
+    ct_err_generic: 'L’envoi a échoué. Contactez-nous directement sur WhatsApp.',
+    find_us: 'Nous trouver',
+
+    req_title: 'Demande d’information',
+    footer_tag: 'Poterie et céramique traditionnelle algérienne, façonnées à la main.',
+    footer_links: 'Navigation', footer_contact: 'Contact', rights: '© Aurès Céramique — Fait main avec fierté en Algérie.',
+    admin: 'Administration',
+
+    /* ---------- boutique COD (v2 — même moteur que le second site) ---------- */
+    nav_cart: 'Panier', nav_track: 'Suivi',
+    cod_only: 'Paiement à la livraison uniquement',
+    add_to_cart: 'Ajouter au panier', added_to_cart: 'Ajouté au panier ✓',
+    choose_color: 'Choisir le décor', color_required: 'Choisissez d’abord un décor',
+    qty: 'Qté', in_stock: 'En stock', last_pieces: 'Plus que {n} en stock',
+    sold_out: 'Rupture de stock', out_of_stock: 'Stock insuffisant.',
+    piece_add: 'Ajouter au panier', piece_buy_now: 'Commander',
+    order_cod_note: 'Paiement en espèces à la livraison — nous vous appelons pour confirmer.',
+    cart_title: 'Panier & commande', cart_empty: 'Votre panier est vide',
+    continue_shopping: 'Continuer mes achats',
+    subtotal: 'Sous-total', delivery: 'Livraison', total: 'Total',
+    discount: 'Remise', remove: 'Retirer',
+    promo_code: 'Code promo', promo_apply: 'Appliquer',
+    promo_applied: 'Code {code} : -{p}%',
+    promo_invalid: 'Code promo invalide ou expiré.',
+    promo_min: 'Ce code demande un minimum d’achat.',
+    delivery_free: 'Offerte',
+    free_delivery_qualifies: '🎉 Livraison offerte !',
+    free_delivery_progress: 'Plus que {x} pour la livraison offerte 🚚',
+    deliv_info: 'Informations de livraison',
+    name: 'Nom complet', phone: 'Téléphone', address: 'Adresse complète',
+    zone: 'Wilaya', place_order: 'Confirmer la commande',
+    deliv_type: 'Mode de livraison',
+    deliv_home: 'À domicile', deliv_home_hint: 'Le livreur vient à votre adresse',
+    deliv_desk: 'Stop desk', deliv_desk_hint: 'Retrait au bureau — moins cher',
+    address_desk_optional: 'Adresse (facultatif pour le stop desk)',
+    required: 'Veuillez remplir tous les champs',
+    invalid_phone_dz: 'Numéro algérien invalide — ex. 0555 12 34 56',
+    confirm_call: 'Nous vous appelons pour confirmer avant l’expédition. Chaque pièce est emballée avec soin (fragile).',
+    order_success: 'Commande confirmée !',
+    order_success_sub: 'Merci ! Nous vous appellerons pour confirmer la livraison. Paiement en espèces à la réception.',
+    order_number: 'N° de commande',
+    cart_updated: 'Certains prix ont été mis à jour.',
+    cart_removed: 'Une pièce n’est plus disponible et a été retirée.',
+    err_stock: 'Stock insuffisant pour une pièce de votre panier.',
+    err_unavailable: 'Une pièce de votre panier n’est plus disponible.',
+    err_too_many: 'Trop de commandes depuis ce numéro. Réessayez plus tard.',
+    err_too_many_today: 'Trop de commandes depuis ce numéro aujourd’hui.',
+    err_duplicate: 'Vous avez déjà commandé ce panier récemment.',
+    err_generic: 'La commande n’a pas pu être enregistrée. Réessayez.',
+    err_load: 'Chargement impossible. Vérifiez votre connexion.',
+    track_title: 'Suivre ma commande',
+    track_intro: 'Entrez votre numéro de commande et le téléphone utilisé lors de l’achat.',
+    track_id: 'N° de commande', track_btn: 'Rechercher',
+    track_not_found: 'Commande introuvable. Vérifiez le numéro et le téléphone.',
+    track_placed: 'Commandée le',
+    st_new: 'Reçue', st_confirmed: 'Confirmée', st_shipped: 'En livraison',
+    st_delivered: 'Livrée', st_cancelled: 'Annulée',
+    carrier: 'Transporteur', tracking_number: 'N° de colis',
+    tracking_hint: 'Suivez votre colis avec ce numéro chez le transporteur.',
+    faq_title: 'Livraison, paiement & échanges',
+    faq_q1: 'Quels sont les délais ?', faq_a1: '24 à 72 heures selon votre wilaya. Nous appelons pour confirmer avant l’envoi. Les pièces fragiles sont emballées avec un soin particulier.',
+    faq_q2: 'Comment payer ?', faq_a2: 'En espèces, à la livraison. Aucun paiement en ligne.',
+    faq_q3: 'Et si ma pièce arrive cassée ?', faq_a3: 'Prévenez-nous sous 7 jours avec une photo : la pièce est échangée ou remboursée. Chaque colis voyage avec une protection renforcée.',
+  },
+
+  /* ---------------- العربية ---------------- */
+  ar: {
+    demo_banner: 'وضع العرض التجريبي — بيانات نموذجية، اربط Supabase في assets/js/config.js',
+    nav_home: 'الرئيسية', nav_collection: 'المجموعة', nav_atelier: 'الورشة',
+    nav_gallery: 'معرض الصور', nav_contact: 'اتصل بنا',
+
+    hero_kicker: 'فخار شاوي — الأوراس، الجزائر',
+    hero_title: 'روح الشاوية، مشكَّلة من طين الأوراس',
+    hero_sub: 'كل قطعة تولد من طين الأوراس: تُشكَّل وتُزيَّن وتُزجَّج يدويًا في ورشتنا وفق التقاليد الشاوية الأصيلة.',
+    hero_cta: 'اكتشف المجموعة',
+    hero_cta2: 'حرفتنا',
+
+    intro_kicker: 'مرحبًا بكم',
+    intro_title: 'ورشة عند سفوح الأوراس، وشغف شاوي',
+    intro_body: 'عند سفوح جبال الأوراس نواصل فن الخزافين الشاوية: قلال وطواجن وأطباق وقطع زخرفية، مصنوعة ومزيّنة بالكامل يدويًا.',
+    intro_body2: 'شبه صناعيون بوسائلنا، حرفيون بروحنا: كل سلسلة تحمل بصمة اليد التي أنتجتها.',
+    intro_cta: 'زورونا',
+
+    feat_kicker: 'مختارات', feat_title: 'قطع مميزة', feat_all: 'عرض الكل ←',
+    cat_kicker: 'عوالمنا', cat_title: 'تصنيفاتنا',
+
+    craft_kicker: 'الحرفة', craft_title: 'من الطين الخام إلى القطعة النهائية',
+    craft_sub: 'سبع مراحل، دون استثناء — نفس العملية منذ الأزل.',
+    step1_t: 'تحضير الطين', step1_d: 'يُنقَّى الطين ويُبلَّل ويعجن جيدًا لإخراج الهواء والحصول على عجينة متجانسة.',
+    step2_t: 'التشكيل', step2_d: 'على العجلة أو في القالب تأخذ القطعة شكلها بين يدي الصانع.',
+    step3_t: 'التجفيف', step3_d: 'ترتاح القطع في الظل أيامًا عدة لتخرج كل رطوبتها قبل الحرق.',
+    step4_t: 'التزيين', step4_d: 'زخارف هندسية ونباتية مرسومة يدويًا بفرشاة دقيقة، على الطريقة الجزائرية الأصيلة.',
+    step5_t: 'التزجيج', step5_d: 'غمسة في الزجاج الشفاف تحمي الرسم وتمنح القطعة بريقها العميق.',
+    step6_t: 'الحرق في الفرن', step6_d: 'أكثر من ألف درجة لساعات: هنا يتحول الطين إلى سيراميك صلب خالد.',
+    step7_t: 'اللمسات والمراقبة', step7_d: 'تُفحص كل قطعة يدويًا وتُصقل وتُراجع قبل مغادرة الورشة.',
+
+    heritage_kicker: 'إرث',
+    heritage_title: 'الشاوية، أهل الأرض والجبال',
+    heritage_body: 'منذ آلاف السنين يحوّل شاوية الأوراس الطين إلى أدوات الحياة اليومية: جرار الماء وأواني النار وقطع للمناسبات، مزيّنة برموز هندسية تحمي وتحكي.',
+    heritage_body2: 'باختياركم قطعنا تدعمون عائلات من الحرفيين، وتأخذون معكم قطعة أصيلة من الأوراس إلى بيوتكم.',
+    heritage_cta: 'اكتشف قصتنا',
+
+    gallery_kicker: 'بين الكواليس', gallery_title: 'حياة الورشة', gallery_all: 'كل المعرض ←', gallery_cta: 'شاهد المعرض',
+
+    cta_kicker: 'لنتحدث', cta_title: 'سؤال؟ طلب خاص؟',
+    cta_sub: 'راسلونا على واتساب أو اتصلوا بنا — نرد بسرعة، بالعربية وبالفرنسية.',
+    cta_whatsapp: 'راسلنا على واتساب', cta_call: 'اتصل بنا',
+
+    col_title: 'المجموعة', col_sub: 'قطع فريدة، مشكَّلة ومزيَّنة يدويًا.',
+    search_ph: 'ابحث عن قطعة…', all_cats: 'الكل', results_zero: 'لا توجد قطعة تطابق بحثك.',
+    req_info: 'اطلب معلومات',
+
+    piece_back: '→ رجوع إلى المجموعة',
+    piece_request: 'طلب معلومات',
+    piece_whatsapp: 'اطلب عبر واتساب',
+    piece_specs: 'الخصائص',
+    spec_dims: 'الأبعاد', spec_material: 'المادة', spec_colors: 'الألوان / الزخارف',
+    spec_cat: 'الفئة', material_default: 'طين مزجّج، ألوان خالية من الرصاص',
+    piece_related: 'قد يعجبك أيضًا', piece_note: 'قطعة حرفية 100٪ — الاختلافات البسيطة جزء من سحر الصنع اليدوي.',
+    piece_not_found: 'القطعة غير موجودة.',
+
+    gal_all: 'الكل', gal_workshop: 'الورشة', gal_artisans: 'الحرفيون',
+    gal_prod: 'الإنتاج', gal_details: 'تفاصيل وزخارف',
+
+    ct_title: 'اتصل بنا', ct_sub: 'لطلب، أو لزيارة الورشة، أو فقط للتحية.',
+    ct_phone: 'الهاتف', ct_whatsapp: 'واتساب', ct_email: 'البريد الإلكتروني',
+    ct_address: 'العنوان', ct_hours: 'ساعات العمل', ct_hours_val: 'السبت – الخميس: 8:30 – 17:30',
+    ct_form_title: 'أرسل لنا رسالة',
+    ct_name: 'اسمك', ct_phone_l: 'رقم هاتفك', ct_email_l: 'البريد الإلكتروني (اختياري)',
+    ct_message: 'رسالتك', ct_send: 'إرسال الرسالة',
+    ct_sent: 'شكرًا! تم إرسال رسالتك، سنرد عليك قريبًا جدًا.',
+    ct_err_fields: 'يرجى إدخال اسمك ورقم هاتفك.',
+    ct_err_phone: 'رقم هاتف جزائري غير صحيح.',
+    ct_err_limit: 'عدد كبير من الرسائل — أعد المحاولة بعد ساعة.',
+    ct_err_generic: 'فشل الإرسال. تواصل معنا مباشرة عبر واتساب.',
+    find_us: 'موقعنا',
+
+    req_title: 'طلب معلومات',
+    footer_tag: 'فخار وسيراميك جزائري تقليدي، مصنوع يدويًا.',
+    footer_links: 'تنقل', footer_contact: 'تواصل', rights: '© أوراس سيراميك — صنع بحب في الجزائر.',
+    admin: 'الإدارة',
+
+    nav_cart: 'السلة', nav_track: 'التتبع',
+    cod_only: 'الدفع عند الاستلام فقط',
+    add_to_cart: 'أضف إلى السلة', added_to_cart: 'تمت الإضافة ✓',
+    choose_color: 'اختر الزخرفة', color_required: 'اختر الزخرفة أولًا',
+    qty: 'الكمية', in_stock: 'متوفر', last_pieces: 'بقي {n} فقط',
+    sold_out: 'نفذت الكمية', out_of_stock: 'الكمية غير كافية.',
+    piece_add: 'أضف إلى السلة', piece_buy_now: 'اطلب الآن',
+    order_cod_note: 'الدفع نقدًا عند الاستلام — نتصل بك للتأكيد.',
+    cart_title: 'السلة والطلب', cart_empty: 'سلتك فارغة',
+    continue_shopping: 'مواصلة التسوق',
+    subtotal: 'المجموع الفرعي', delivery: 'التوصيل', total: 'الإجمالي',
+    discount: 'الخصم', remove: 'إزالة',
+    promo_code: 'رمز الخصم', promo_apply: 'تطبيق',
+    promo_applied: 'رمز {code} : -{p}%',
+    promo_invalid: 'رمز غير صالح أو منتهي.',
+    promo_min: 'هذا الرمز يتطلب حدًا أدنى للشراء.',
+    delivery_free: 'مجانًا',
+    free_delivery_qualifies: '🎉 توصيل مجاني!',
+    free_delivery_progress: 'أضف {x} أخرى للتوصيل المجاني 🚚',
+    deliv_info: 'معلومات التوصيل',
+    name: 'الاسم الكامل', phone: 'الهاتف', address: 'العنوان الكامل',
+    zone: 'الولاية', place_order: 'تأكيد الطلب',
+    deliv_type: 'طريقة التوصيل',
+    deliv_home: 'إلى المنزل', deliv_home_hint: 'التوصيل إلى عنوانك',
+    deliv_desk: 'مكتب التوصيل', deliv_desk_hint: 'الاستلام من المكتب — أرخص',
+    address_desk_optional: 'العنوان (اختياري لمكتب التوصيل)',
+    required: 'يرجى ملء جميع الحقول',
+    invalid_phone_dz: 'رقم جزائري غير صحيح — مثال 0555 12 34 56',
+    confirm_call: 'نتصل بك للتأكيد قبل الشحن. كل قطعة تُغلَّف بعناية.',
+    order_success: 'تم تأكيد طلبك!',
+    order_success_sub: 'شكرًا! سنتصل بك لتأكيد التوصيل. الدفع نقدًا عند الاستلام.',
+    order_number: 'رقم الطلب',
+    cart_updated: 'تم تحديث بعض الأسعار.',
+    cart_removed: 'قطعة لم تعد متوفرة وأُزيلت.',
+    err_stock: 'الكمية غير كافية لقطعة في سلتك.',
+    err_unavailable: 'قطعة في سلتك لم تعد متوفرة.',
+    err_too_many: 'طلبات كثيرة من هذا الرقم. حاول لاحقًا.',
+    err_too_many_today: 'طلبات كثيرة من هذا الرقم اليوم.',
+    err_duplicate: 'لقد طلبت هذه السلة مؤخرًا.',
+    err_generic: 'تعذّر تسجيل الطلب. حاول مجددًا.',
+    err_load: 'تعذّر التحميل. تحقق من اتصالك.',
+    track_title: 'تتبّع طلبي',
+    track_intro: 'أدخل رقم الطلب ورقم الهاتف المستعمل.',
+    track_id: 'رقم الطلب', track_btn: 'بحث',
+    track_not_found: 'لم يتم العثور على الطلب.',
+    track_placed: 'بتاريخ',
+    st_new: 'مستلم', st_confirmed: 'مؤكد', st_shipped: 'قيد التوصيل',
+    st_delivered: 'تم التسليم', st_cancelled: 'ملغى',
+    carrier: 'شركة التوصيل', tracking_number: 'رقم الطرد',
+    tracking_hint: 'تابع طردك بهذا الرقم لدى الشركة.',
+    faq_title: 'التوصيل والدفع والاستبدال',
+    faq_q1: 'ما مدة التوصيل؟', faq_a1: 'من 24 إلى 72 ساعة حسب الولاية. نتصل للتأكيد قبل الإرسال.',
+    faq_q2: 'كيف الدفع؟', faq_a2: 'نقدًا عند الاستلام. لا يوجد دفع إلكتروني.',
+    faq_q3: 'ماذا لو وصلت القطعة مكسورة؟', faq_a3: 'أخبرنا خلال 7 أيام مع صورة: نستبدلها أو نعيد المبلغ.',
+  },
+
+  /* ---------------- ENGLISH ---------------- */
+  en: {
+    demo_banner: 'Demo mode — sample data, connect Supabase in assets/js/config.js',
+    nav_home: 'Home', nav_collection: 'Collection', nav_atelier: 'Craftsmanship',
+    nav_gallery: 'Gallery', nav_contact: 'Contact',
+
+    hero_kicker: 'Chaoui pottery — Aurès, Algeria',
+    hero_title: 'The Chaoui soul, shaped from Aurès clay',
+    hero_sub: 'Every piece is born from Aurès clay — shaped, painted and glazed by hand in our workshop, in the purest Chaoui tradition.',
+    hero_cta: 'Explore the collection',
+    hero_cta2: 'Our craftsmanship',
+
+    intro_kicker: 'Welcome',
+    intro_title: 'A workshop at the foot of the Aurès, a Chaoui passion',
+    intro_body: 'At the foot of the Aurès mountains, we carry on the art of Chaoui potters: qullas, tajines, plates and decorative pieces, shaped and decorated entirely by hand.',
+    intro_body2: 'Semi-industrial in our means, artisanal in our soul: every series keeps the trace of the human gesture that brought it to life.',
+    intro_cta: 'Visit us',
+
+    feat_kicker: 'Selection', feat_title: 'Featured pieces', feat_all: 'View all →',
+    cat_kicker: 'Our worlds', cat_title: 'Categories',
+
+    craft_kicker: 'Know-how', craft_title: 'From raw clay to finished piece',
+    craft_sub: 'Seven steps, no shortcuts — the same process as always.',
+    step1_t: 'Preparing the clay', step1_d: 'The clay is sorted, moistened and kneaded at length to remove air and obtain a smooth paste.',
+    step2_t: 'Shaping', step2_d: 'On the wheel or in a mould, the piece takes shape in the artisan’s hands.',
+    step3_t: 'Drying', step3_d: 'Pieces rest in the shade for several days so every trace of moisture leaves before firing.',
+    step4_t: 'Decorating', step4_d: 'Geometric and floral patterns painted freehand with a fine brush, in the purest Algerian tradition.',
+    step5_t: 'Glazing', step5_d: 'A bath of transparent glaze protects the decoration and gives each piece its deep sheen.',
+    step6_t: 'Kiln firing', step6_d: 'Over a thousand degrees for hours: this is where clay becomes ceramic — hard and timeless.',
+    step7_t: 'Finishing & quality control', step7_d: 'Each piece is inspected by hand, sanded and checked before leaving the workshop.',
+
+    heritage_kicker: 'Heritage',
+    heritage_title: 'The Chaoui, people of earth and mountains',
+    heritage_body: 'For millennia, the Chaoui of the Aurès have turned clay into everyday objects: water jars, fire dishes and ceremonial pieces, adorned with geometric symbols that protect and tell stories.',
+    heritage_body2: 'By choosing our pieces you support families of artisans and bring an authentic fragment of the Aurès into your home.',
+    heritage_cta: 'Discover our story',
+
+    gallery_kicker: 'Behind the scenes', gallery_title: 'Life at the workshop', gallery_all: 'Full gallery →', gallery_cta: 'See the gallery',
+
+    cta_kicker: 'Let’s talk', cta_title: 'A question? A special order?',
+    cta_sub: 'Message us on WhatsApp or give us a call — we answer fast, in Arabic, French or English.',
+    cta_whatsapp: 'Chat on WhatsApp', cta_call: 'Call us',
+
+    col_title: 'The Collection', col_sub: 'Unique pieces, shaped and decorated by hand.',
+    search_ph: 'Search a piece…', all_cats: 'All', results_zero: 'No piece matches your search.',
+    req_info: 'Request info',
+
+    piece_back: '← Back to collection',
+    piece_request: 'Request information',
+    piece_whatsapp: 'Order via WhatsApp',
+    piece_specs: 'Specifications',
+    spec_dims: 'Dimensions', spec_material: 'Material', spec_colors: 'Colors / designs',
+    spec_cat: 'Category', material_default: 'Glazed clay, lead-free paints',
+    piece_related: 'You may also like', piece_note: '100% handcrafted — slight variations are part of the charm of handmade.',
+    piece_not_found: 'Piece not found.',
+
+    gal_all: 'All', gal_workshop: 'Workshop', gal_artisans: 'Artisans',
+    gal_prod: 'Production', gal_details: 'Details & patterns',
+
+    ct_title: 'Contact us', ct_sub: 'For an order, a visit to the workshop, or just to say hello.',
+    ct_phone: 'Phone', ct_whatsapp: 'WhatsApp', ct_email: 'Email',
+    ct_address: 'Address', ct_hours: 'Opening hours', ct_hours_val: 'Sat – Thu: 8:30 am – 5:30 pm',
+    ct_form_title: 'Send us a message',
+    ct_name: 'Your name', ct_phone_l: 'Your phone number', ct_email_l: 'Email (optional)',
+    ct_message: 'Your message', ct_send: 'Send message',
+    ct_sent: 'Thank you! Your message has been sent, we will reply very soon.',
+    ct_err_fields: 'Please enter your name and phone number.',
+    ct_err_phone: 'Invalid Algerian phone number.',
+    ct_err_limit: 'Too many messages sent — please try again within an hour.',
+    ct_err_generic: 'Sending failed. Reach us directly on WhatsApp.',
+    find_us: 'Find us',
+
+    req_title: 'Information request',
+    footer_tag: 'Traditional Algerian pottery and ceramics, made by hand.',
+    footer_links: 'Navigation', footer_contact: 'Contact', rights: '© Aurès Céramique — Handmade with pride in Algeria.',
+    admin: 'Administration',
+
+    nav_cart: 'Cart', nav_track: 'Track order',
+    cod_only: 'Cash on delivery only',
+    add_to_cart: 'Add to cart', added_to_cart: 'Added to cart ✓',
+    choose_color: 'Choose the décor', color_required: 'Please choose a décor first',
+    qty: 'Qty', in_stock: 'In stock', last_pieces: 'Only {n} left',
+    sold_out: 'Out of stock', out_of_stock: 'Not enough stock.',
+    piece_add: 'Add to cart', piece_buy_now: 'Order now',
+    order_cod_note: 'Cash on delivery — we call you to confirm.',
+    cart_title: 'Cart & order', cart_empty: 'Your cart is empty',
+    continue_shopping: 'Continue shopping',
+    subtotal: 'Subtotal', delivery: 'Delivery', total: 'Total',
+    discount: 'Discount', remove: 'Remove',
+    promo_code: 'Promo code', promo_apply: 'Apply',
+    promo_applied: 'Code {code}: -{p}%',
+    promo_invalid: 'Invalid or expired promo code.',
+    promo_min: 'This code needs a minimum purchase.',
+    delivery_free: 'Free',
+    free_delivery_qualifies: '🎉 Free delivery!',
+    free_delivery_progress: 'Only {x} away from free delivery 🚚',
+    deliv_info: 'Delivery information',
+    name: 'Full name', phone: 'Phone', address: 'Full address',
+    zone: 'Wilaya', place_order: 'Confirm order',
+    deliv_type: 'Delivery method',
+    deliv_home: 'Home delivery', deliv_home_hint: 'The courier comes to you',
+    deliv_desk: 'Stop desk', deliv_desk_hint: 'Collect from the office — cheaper',
+    address_desk_optional: 'Address (optional for stop desk)',
+    required: 'Please fill in all fields',
+    invalid_phone_dz: 'Invalid Algerian number — e.g. 0555 12 34 56',
+    confirm_call: 'We call you to confirm before shipping. Every fragile piece is packed with care.',
+    order_success: 'Order confirmed!',
+    order_success_sub: 'Thank you! We will call you to confirm delivery. Cash on delivery.',
+    order_number: 'Order no.',
+    cart_updated: 'Some prices were updated.',
+    cart_removed: 'A piece is no longer available and was removed.',
+    err_stock: 'Not enough stock for a piece in your cart.',
+    err_unavailable: 'A piece in your cart is no longer available.',
+    err_too_many: 'Too many orders from this number. Try again later.',
+    err_too_many_today: 'Too many orders from this number today.',
+    err_duplicate: 'You already ordered this basket recently.',
+    err_generic: 'The order could not be saved. Please try again.',
+    err_load: 'Could not load. Check your connection.',
+    track_title: 'Track my order',
+    track_intro: 'Enter your order number and the phone you used.',
+    track_id: 'Order no.', track_btn: 'Search',
+    track_not_found: 'Order not found. Check the number and phone.',
+    track_placed: 'Ordered on',
+    st_new: 'Received', st_confirmed: 'Confirmed', st_shipped: 'Out for delivery',
+    st_delivered: 'Delivered', st_cancelled: 'Cancelled',
+    carrier: 'Carrier', tracking_number: 'Parcel no.',
+    tracking_hint: 'Track your parcel with this number at the carrier.',
+    faq_title: 'Delivery, payment & exchanges',
+    faq_q1: 'How long is delivery?', faq_a1: '24 to 72 hours depending on wilaya. We call to confirm before shipping. Fragile pieces travel with reinforced packing.',
+    faq_q2: 'How do I pay?', faq_a2: 'Cash on delivery. No online payment.',
+    faq_q3: 'What if my piece arrives broken?', faq_a3: 'Tell us within 7 days with a photo: we exchange or refund. Every parcel is packed for fragile ceramics.',
+  },
+};
+
+let LANG = localStorage.getItem('tc_lang') || 'fr';
+if (!I18N[LANG]) LANG = 'fr';
+
+function t(key) {
+  return (I18N[LANG] && I18N[LANG][key]) || I18N.fr[key] || key;
+}
+
+/* fills a {d} placeholder inside translated strings */
+function tx(key, d) { return t(key).replace('{d}', d); }
+
+function applyI18n(root = document) {
+  document.documentElement.lang = LANG;
+  document.documentElement.dir = LANG === 'ar' ? 'rtl' : 'ltr';
+  root.querySelectorAll('[data-i18n]').forEach(el => { el.innerHTML = t(el.dataset.i18n); });
+  root.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    el.setAttribute('placeholder', t(el.dataset.i18nPh));
+  });
+}
+
+/* switching language reloads so server-rendered bits re-render cleanly */
+function setLang(l) {
+  if (!I18N[l]) return;
+  LANG = l;
+  localStorage.setItem('tc_lang', l);
+  location.reload();
+}
+
+/* language switcher label: shows the language you'd switch TO */
+function langToggleLabel() {
+  return LANG === 'fr' ? 'ع' : LANG === 'ar' ? 'EN' : 'FR';
+}
+function nextLang() { return LANG === 'fr' ? 'ar' : LANG === 'en' ? 'fr' : 'en'; }

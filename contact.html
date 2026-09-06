@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Aurès Céramique</title>
+  <meta name="description" content="Contactez notre atelier de céramique : téléphone, WhatsApp, e-mail et adresse. Commandes spéciales et visites de l'atelier bienvenues.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Aurès Céramique">
+  <meta property="og:title" content="Contact — Aurès Céramique">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#f8f3e9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23f8f3e9'/%3E%3Cpath d='M13 6h6v3c0 2.5 4.5 4 4.5 9.5S19.5 27 16 27s-7.5-3-7.5-8.5S13 11 13 9z' fill='%23b3572f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <section class="container page-banner">
+    <span class="kicker" data-i18n="cta_kicker"></span>
+    <h1 data-i18n="ct_title"></h1>
+    <p data-i18n="ct_sub"></p>
+  </section>
+
+  <section class="container" style="padding-bottom:30px">
+    <div class="contact-grid" id="contact-cards"></div>
+
+    <div class="contact-cols">
+      <div>
+        <div class="section-head"><h2 data-i18n="ct_form_title"></h2></div>
+        <form id="ct-form">
+          <div class="field">
+            <label for="c-name" data-i18n="ct_name"></label>
+            <input id="c-name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="c-phone" data-i18n="ct_phone_l"></label>
+            <input id="c-phone" required inputmode="tel" autocomplete="tel"
+                   placeholder="0555 12 34 56">
+          </div>
+          <div class="field">
+            <label for="c-email" data-i18n="ct_email_l"></label>
+            <input id="c-email" type="email" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="c-msg" data-i18n="ct_message"></label>
+            <textarea id="c-msg"></textarea>
+          </div>
+          <button type="submit" class="btn accent" style="min-width:220px" data-i18n="ct_send"></button>
+        </form>
+      </div>
+      <div>
+        <div class="section-head"><h2 data-i18n="find_us"></h2></div>
+        <iframe class="map-frame" id="map-frame" loading="lazy"
+                title="Google Maps" allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/ui.js?v=2"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/contact-page.js"></script>
+</body>
+</html>

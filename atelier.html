@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L’Atelier — Savoir-faire & héritage | Aurès Céramique</title>
+  <meta name="description" content="Comment naissent nos céramiques : préparation de l'argile, façonnage, séchage, décoration à la main, émaillage et cuisson au four. Un savoir-faire chaoui transmis de génération en génération.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Aurès Céramique">
+  <meta property="og:title" content="L’Atelier — Aurès Céramique">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#f8f3e9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23f8f3e9'/%3E%3Cpath d='M13 6h6v3c0 2.5 4.5 4 4.5 9.5S19.5 27 16 27s-7.5-3-7.5-8.5S13 11 13 9z' fill='%23b3572f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <section class="container page-banner">
+    <span class="kicker" data-i18n="craft_kicker"></span>
+    <h1 data-i18n="craft_title"></h1>
+    <p data-i18n="craft_sub"></p>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="container" style="padding-bottom:70px">
+    <div id="steps-full" class="steps"></div>
+  </section>
+
+  <!-- PROCESS GALLERY STRIP -->
+  <section class="container" style="padding-bottom:20px">
+    <div class="gal-strip" id="atelier-strip"></div>
+  </section>
+
+  <!-- HERITAGE -->
+  <section class="section heritage-band">
+    <div class="container split">
+      <div class="split-media order-flip">
+        <img src="" alt="" loading="lazy" id="heritage-img">
+      </div>
+      <div class="split-body">
+        <span class="kicker" data-i18n="heritage_kicker"></span>
+        <h2 data-i18n="heritage_title"></h2>
+        <p data-i18n="heritage_body"></p>
+        <p data-i18n="heritage_body2"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="section cta-band">
+    <div class="container cta-inner">
+      <span class="kicker" style="justify-content:center" data-i18n="cta_kicker"></span>
+      <h2 data-i18n="cta_title"></h2>
+      <p data-i18n="cta_sub"></p>
+      <div class="cta-actions">
+        <a id="at-wa-btn" class="btn wa" target="_blank" rel="noopener"><span data-i18n="cta_whatsapp"></span></a>
+        <a href="contact.html" class="btn line"><span data-i18n="nav_contact"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/ui.js?v=2"></script>
+  <script src="assets/js/cart.js"></script>
+  <script>
+    /* atelier page — static content, tiny inline script */
+    renderChrome('atelier');
+    const STEPS = 7;
+    let html = '';
+    for (let i = 1; i <= STEPS; i++) {
+      html += `
+      <div class="step-row">
+        <div class="step-num">${i}</div>
+        <h3>${t('step' + i + '_t')}</h3>
+        <p>${t('step' + i + '_d')}</p>
+      </div>`;
+    }
+    document.getElementById('steps-full').innerHTML = html;
+
+    const strip = [
+      ['Préparation de l’argile', 'gal_prod', 'gal-argile'],
+      ['Façonnage au tour', 'gal_artisans', 'gal-tour'],
+      ['Peinture des motifs', 'gal_details', 'gal-peinture'],
+      ['Cuisson au four', 'gal_workshop', 'gal-four'],
+    ];
+    document.getElementById('atelier-strip').innerHTML = strip.map(([label, cat, img]) => `
+      <figure class="gal-item">
+        <img src="assets/img/demo/${img}.jpg" alt="${esc(label)}" loading="lazy">
+        <figcaption>${esc(t(cat))} — ${esc(label)}</figcaption>
+      </figure>`).join('');
+
+    const hi = document.getElementById('heritage-img');
+    hi.src = 'assets/img/demo/heritage.jpg';
+    hi.alt = 'Poterie traditionnelle algérienne';
+
+    setTimeout(() => {
+      const wa = document.getElementById('at-wa-btn');
+      if (wa) { wa.href = waLink(); wa.style.display = waNumber() ? '' : 'none'; }
+    }, 600);
+
+    jsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: t('craft_title'),
+      description: t('craft_sub'),
+    });
+    applyI18n();
+    watchReveals();
+  </script>
+</body>
+</html>

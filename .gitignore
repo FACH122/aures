@@ -1,0 +1,8 @@
+# OS / editor junk — never deploy these
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Local-only notes (keep the repo clean)
+/tmp/

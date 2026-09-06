@@ -1,0 +1,53 @@
+# Netlify — static site, no build step needed
+[build]
+  publish = "."
+
+# Pretty URLs
+[[redirects]]
+  from = "/collection"
+  to = "/collection.html"
+  status = 200
+
+[[redirects]]
+  from = "/atelier"
+  to = "/atelier.html"
+  status = 200
+
+[[redirects]]
+  from = "/gallery"
+  to = "/gallery.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+
+[[redirects]]
+  from = "/checkout"
+  to = "/checkout.html"
+  status = 200
+
+[[redirects]]
+  from = "/panier"
+  to = "/checkout.html"
+  status = 200
+
+[[redirects]]
+  from = "/track"
+  to = "/track.html"
+  status = 200
+
+[[redirects]]
+  from = "/suivi"
+  to = "/track.html"
+  status = 200
+
+# Security headers (the anon key is public by design — the real security
+# lives in supabase/schema.sql RLS policies)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
